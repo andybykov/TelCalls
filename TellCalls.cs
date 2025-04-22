@@ -32,6 +32,8 @@ namespace DemoCS00
             User.Minutes = int.Parse(Console.ReadLine()); //инициализируем поля
 
             Console.Write("Введите тип звонка звонка (г/м): ");
+
+            // Выбор типа звонка через swicth-case
             switch (char.Parse(Console.ReadLine()))
             {
                 case 'г':
@@ -43,7 +45,7 @@ namespace DemoCS00
                 default: 
                     User.CallType = CallType.city;  //по умолчанию город
                     break;
-            }                        
+            }
             /*
              Обрабатываются звонки клиента в зависимости 
              * от типа звонка: «городской» (5 руб./мин.) и «мобильный» (1 руб./мин.), 
@@ -55,6 +57,7 @@ namespace DemoCS00
             //    if (callType == 'М')
             //        balance -= minutes * 1;
 
+            // Выбор тарификации в зависимости от типа звонка
             if (User.CallType == CallType.city)
                 User.Balance -= User.Minutes * 5;
             else
